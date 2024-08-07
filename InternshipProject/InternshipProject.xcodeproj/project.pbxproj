@@ -15,6 +15,7 @@
 		F8D1CC792C63267500ED92BB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D1CC782C63267500ED92BB /* LoginViewController.swift */; };
 		F8D1CC7C2C63282600ED92BB /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = F8D1CC7B2C63282600ED92BB /* SnapKit */; };
 		F8D1CC7E2C63282600ED92BB /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = F8D1CC7D2C63282600ED92BB /* SnapKit-Dynamic */; };
+		F8D1CC802C63294200ED92BB /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D1CC7F2C63294200ED92BB /* Extension+UIViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		F8D1CC702C63226900ED92BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F8D1CC722C63226900ED92BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8D1CC782C63267500ED92BB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F8D1CC7F2C63294200ED92BB /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				F8D1CC6F2C63226900ED92BB /* LaunchScreen.storyboard */,
 				F8D1CC722C63226900ED92BB /* Info.plist */,
 				F8D1CC6A2C63226800ED92BB /* InternshipProject.xcdatamodeld */,
+				F8D1CC7F2C63294200ED92BB /* Extension+UIViewController.swift */,
 			);
 			path = InternshipProject;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 				F8D1CC6C2C63226800ED92BB /* InternshipProject.xcdatamodeld in Sources */,
 				F8D1CC622C63226800ED92BB /* AppDelegate.swift in Sources */,
 				F8D1CC792C63267500ED92BB /* LoginViewController.swift in Sources */,
+				F8D1CC802C63294200ED92BB /* Extension+UIViewController.swift in Sources */,
 				F8D1CC642C63226800ED92BB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

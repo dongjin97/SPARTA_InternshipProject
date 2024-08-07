@@ -28,7 +28,11 @@ class LoginViewController: UIViewController {
     private lazy var startButton: UIButton = {
         let button = UIButton()
         button.setTitle("시작하기", for: .normal)
-        button.setTitleColor(.black, for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .red
+        button.layer.cornerRadius = 10
+        button.layer.masksToBounds = true
+        button.addTarget(self, action: #selector(tapStartButton), for: .touchUpInside)
         
         return button
     }()
@@ -66,7 +70,15 @@ extension LoginViewController {
     }
 }
 
-// MARK: UITextField Delegate
+// MARK: - Action
+
+extension LoginViewController {
+    @objc private func tapStartButton() {
+    }
+}
+
+
+// MARK: - UITextField Delegate
 
 extension LoginViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

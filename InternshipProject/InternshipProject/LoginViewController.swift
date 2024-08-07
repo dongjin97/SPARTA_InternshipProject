@@ -65,3 +65,11 @@ extension LoginViewController {
         }
     }
 }
+
+// MARK: UITextField Delegate
+
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return textField.resignFirstResponder()
+    }
+}

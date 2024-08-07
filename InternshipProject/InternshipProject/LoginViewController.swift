@@ -83,7 +83,19 @@ extension LoginViewController {
 
 extension LoginViewController {
     @objc private func tapStartButton() {
-       
+        guard let email = getEmailTextFieldText() else { return }
+        print("typing Email: \(email)") // 이메일 아무것도 안쳤을때 분기 생각 !
+        do {
+            let isUserExit = try CoreDataManager.shared.isUserExist(email:  email)
+            if isUserExit {
+                print("가입된 이메일입니다. 로그인을 진행합니다.")
+            } else {
+                print("가입되지 않은 이메일입니다. 회원정보를 저장한후 로그인을 진행합니다.")
+                CoreDataManager.shared.addUser(email: email)
+            }
+        } catch {
+            print(error)
+        }
     }
 }
 

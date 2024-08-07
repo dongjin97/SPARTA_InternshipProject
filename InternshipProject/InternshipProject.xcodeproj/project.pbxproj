@@ -17,6 +17,7 @@
 		F8D1CC7E2C63282600ED92BB /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = F8D1CC7D2C63282600ED92BB /* SnapKit-Dynamic */; };
 		F8D1CC802C63294200ED92BB /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D1CC7F2C63294200ED92BB /* Extension+UIViewController.swift */; };
 		F8D1CC832C632AEF00ED92BB /* Extension+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D1CC822C632AEF00ED92BB /* Extension+View.swift */; };
+		F8D1CC912C63359300ED92BB /* PaddingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D1CC902C63359300ED92BB /* PaddingTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		F8D1CC782C63267500ED92BB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F8D1CC7F2C63294200ED92BB /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
 		F8D1CC822C632AEF00ED92BB /* Extension+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+View.swift"; sourceTree = "<group>"; };
+		F8D1CC902C63359300ED92BB /* PaddingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 		F8D1CC602C63226800ED92BB /* InternshipProject */ = {
 			isa = PBXGroup;
 			children = (
+				F8D1CC8D2C6334CE00ED92BB /* Components */,
 				F8D1CC812C632ADB00ED92BB /* Extension */,
 				F8D1CC612C63226800ED92BB /* AppDelegate.swift */,
 				F8D1CC632C63226800ED92BB /* SceneDelegate.swift */,
@@ -83,6 +86,14 @@
 				F8D1CC822C632AEF00ED92BB /* Extension+View.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		F8D1CC8D2C6334CE00ED92BB /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				F8D1CC902C63359300ED92BB /* PaddingTextField.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +175,7 @@
 			files = (
 				F8D1CC6C2C63226800ED92BB /* InternshipProject.xcdatamodeld in Sources */,
 				F8D1CC622C63226800ED92BB /* AppDelegate.swift in Sources */,
+				F8D1CC912C63359300ED92BB /* PaddingTextField.swift in Sources */,
 				F8D1CC792C63267500ED92BB /* LoginViewController.swift in Sources */,
 				F8D1CC802C63294200ED92BB /* Extension+UIViewController.swift in Sources */,
 				F8D1CC832C632AEF00ED92BB /* Extension+View.swift in Sources */,

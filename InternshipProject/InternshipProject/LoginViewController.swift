@@ -70,10 +70,20 @@ extension LoginViewController {
     }
 }
 
+// MARK: - Private Method
+
+extension LoginViewController {
+    private func getEmailTextFieldText() -> String? {
+        return emailTextField.text
+    }
+}
+
+
 // MARK: - Action
 
 extension LoginViewController {
     @objc private func tapStartButton() {
+       
     }
 }
 

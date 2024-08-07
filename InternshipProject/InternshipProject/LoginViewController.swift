@@ -20,6 +20,7 @@ class LoginViewController: UIViewController {
         let textField = PaddingTextField()
         textField.placeholder = "이메일을 입력하세요."
         textField.layer.borderColor = UIColor.lightGray.cgColor
+        textField.delegate = self
         
         return textField
     }()
@@ -40,6 +41,7 @@ class LoginViewController: UIViewController {
         setBackgroundColor()
         setAddSubViews()
         setAutoLayout()
+        hideKeyboardWhenTappedAround()
     }
 }
 

@@ -16,18 +16,16 @@ class LoginViewController: UIViewController {
     
     // MARK: - SubViews
     
-    private lazy var emailTextField: UITextField = {
-        let textField = UITextField()
+    private lazy var emailTextField: PaddingTextField = {
+        let textField = PaddingTextField()
         textField.placeholder = "이메일을 입력하세요."
-        textField.layer.cornerRadius = 10
-        textField.layer.masksToBounds = true
-        textField.layer.borderWidth = 1
+        textField.layer.borderColor = UIColor.lightGray.cgColor
         
         return textField
     }()
     
     private lazy var startButton: UIButton = {
-       let button = UIButton()
+        let button = UIButton()
         button.setTitle("시작하기", for: .normal)
         button.setTitleColor(.black, for: .normal)
         

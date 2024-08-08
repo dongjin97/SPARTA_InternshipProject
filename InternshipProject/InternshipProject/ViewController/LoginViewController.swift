@@ -71,6 +71,7 @@ class LoginViewController: UIViewController {
         setAddSubViews()
         setAutoLayout()
         hideKeyboardWhenTappedAround()
+        CoreDataManager.shared.getSaveCoredataPath()
     }
 }
 
@@ -99,8 +100,32 @@ extension LoginViewController {
 // MARK: - Private Method
 
 extension LoginViewController {
-    private func getEmailTextFieldText() -> String? {
-        return emailTextField.text
+    private func isOnlyWhitespace(text: String) -> Bool { // 공백 입력 체크
+        return text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    }
+    
+    private func checkTextFieldWhitespace() -> Bool{ // 입력되지 않은 텍스트필드 알림 및 포커스
+        let emailCheck = isOnlyWhitespace(text: emailTextField.text ?? "")
+        let nameCheck = isOnlyWhitespace(text: nameTextField.text ?? "")
+        let nicknameCheck = isOnlyWhitespace(text: nicknameTextField.text ?? "")
+        
+        if !emailCheck && !nameCheck && !nicknameCheck {
+            print("올바른 입력값이 입력 되었습니다.")
+            return true
+        } else {
+            if emailCheck {
+                showMessage(message: "이메일 입력칸이 공백입니다.")
+                emailTextField.becomeFirstResponder()
+            } else if nameCheck {
+                showMessage(message: "이름 입력칸이 공백입니다.")
+                nameTextField.becomeFirstResponder()
+            } else if nicknameCheck {
+                showMessage(message: "닉네임 입력칸이 공백입니다.")
+                nicknameTextField.becomeFirstResponder()
+            }
+        }
+        
+        return false
     }
 }
 
@@ -109,22 +134,25 @@ extension LoginViewController {
 
 extension LoginViewController {
     @objc private func tapStartButton() {
-        guard let email = getEmailTextFieldText() else { return }
-        print("typing Email: \(email)") // 이메일 아무것도 안쳤을때 분기 생각 !
-        do {
-            let isUserExit = try CoreDataManager.shared.isUserExist(email:  email)
-            if isUserExit {
-                print("가입된 이메일입니다. 로그인을 진행합니다.")
-            } else {
-                print("가입되지 않은 이메일입니다. 회원정보를 저장한후 로그인을 진행합니다.")
-                CoreDataManager.shared.addUser(email: email)
+        let email = emailTextField.text ?? ""
+        let name = nameTextField.text ?? ""
+        let nickname = nicknameTextField.text ?? ""
+        print("typing Email: \(email), name: \(name), nickname: \(nickname)")
+        if checkTextFieldWhitespace() {
+            do {
+                let isUserExit = try CoreDataManager.shared.isUserExist(email: email)
+                if isUserExit {
+                    print("가입된 이메일입니다. 로그인을 진행합니다.")
+                } else {
+                    print("가입되지 않은 이메일입니다. 회원정보를 저장한후 로그인을 진행합니다.")
+                    CoreDataManager.shared.addUser(email: email,name: name, nickname: nickname)
+                }
+            } catch {
+                print(error)
             }
-        } catch {
-            print(error)
         }
     }
 }
-
 
 // MARK: - UITextField Delegate
 

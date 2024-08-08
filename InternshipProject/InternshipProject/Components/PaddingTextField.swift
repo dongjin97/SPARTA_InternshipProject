@@ -25,12 +25,20 @@ class PaddingTextField : UITextField {
     }
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         self.layer.cornerRadius = 10
         self.layer.borderWidth = 1
         self.layer.masksToBounds = true
+        self.layer.borderColor = UIColor.lightGray.cgColor
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension PaddingTextField {
+    func setPlaceholder(text: String) {
+        self.placeholder = text
     }
 }

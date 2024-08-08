@@ -19,6 +19,7 @@
 		F8D1CC912C63359300ED92BB /* PaddingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D1CC902C63359300ED92BB /* PaddingTextField.swift */; };
 		F8D1CCA32C634A3B00ED92BB /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D1CCA22C634A3B00ED92BB /* CoreDataManager.swift */; };
 		F8D1CCA62C634AFF00ED92BB /* UserModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F8D1CCA42C634AFF00ED92BB /* UserModel.xcdatamodeld */; };
+		F8D1CCA92C647E3E00ED92BB /* Extension+StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D1CCA82C647E3E00ED92BB /* Extension+StackView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		F8D1CC902C63359300ED92BB /* PaddingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingTextField.swift; sourceTree = "<group>"; };
 		F8D1CCA22C634A3B00ED92BB /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoreDataManager.swift; path = "../../../../../../.Trash/SPARTA_InternshipProject 오후 3.21.13/InternshipProject/InternshipProject/CoreData/CoreDataManager.swift"; sourceTree = "<group>"; };
 		F8D1CCA52C634AFF00ED92BB /* UserModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserModel.xcdatamodel; sourceTree = "<group>"; };
+		F8D1CCA82C647E3E00ED92BB /* Extension+StackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+StackView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,12 +70,12 @@
 		F8D1CC602C63226800ED92BB /* InternshipProject */ = {
 			isa = PBXGroup;
 			children = (
+				F8D1CCA72C647D2C00ED92BB /* ViewController */,
 				F8D1CCA12C634A2900ED92BB /* CoreData */,
 				F8D1CC8D2C6334CE00ED92BB /* Components */,
 				F8D1CC812C632ADB00ED92BB /* Extension */,
 				F8D1CC612C63226800ED92BB /* AppDelegate.swift */,
 				F8D1CC632C63226800ED92BB /* SceneDelegate.swift */,
-				F8D1CC782C63267500ED92BB /* LoginViewController.swift */,
 				F8D1CC6D2C63226900ED92BB /* Assets.xcassets */,
 				F8D1CC6F2C63226900ED92BB /* LaunchScreen.storyboard */,
 				F8D1CC722C63226900ED92BB /* Info.plist */,
@@ -86,6 +88,7 @@
 			children = (
 				F8D1CC7F2C63294200ED92BB /* Extension+UIViewController.swift */,
 				F8D1CC822C632AEF00ED92BB /* Extension+View.swift */,
+				F8D1CCA82C647E3E00ED92BB /* Extension+StackView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -105,6 +108,14 @@
 				F8D1CCA42C634AFF00ED92BB /* UserModel.xcdatamodeld */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		F8D1CCA72C647D2C00ED92BB /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F8D1CC782C63267500ED92BB /* LoginViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,6 +195,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8D1CCA92C647E3E00ED92BB /* Extension+StackView.swift in Sources */,
 				F8D1CC622C63226800ED92BB /* AppDelegate.swift in Sources */,
 				F8D1CC912C63359300ED92BB /* PaddingTextField.swift in Sources */,
 				F8D1CC792C63267500ED92BB /* LoginViewController.swift in Sources */,

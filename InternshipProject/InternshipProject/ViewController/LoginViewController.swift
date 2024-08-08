@@ -16,12 +16,37 @@ class LoginViewController: UIViewController {
     
     // MARK: - SubViews
     
+    private lazy var textFieldStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.distribution = .fillEqually
+        stackView.alignment = .fill
+        stackView.spacing = 15
+        
+        return stackView
+    }()
+    
     private lazy var emailTextField: PaddingTextField = {
         let textField = PaddingTextField()
-        textField.placeholder = "이메일을 입력하세요."
-        textField.layer.borderColor = UIColor.lightGray.cgColor
+        textField.setPlaceholder(text: "이메일을 입력하세요.")
         textField.delegate = self
         
+        return textField
+    }()
+    
+    private lazy var nameTextField: PaddingTextField = {
+        let textField = PaddingTextField()
+        textField.setPlaceholder(text: "이름을 입력하세요.")
+        textField.delegate = self
+        
+        return textField
+    }()
+    
+    private lazy var nicknameTextField: PaddingTextField = {
+        let textField = PaddingTextField()
+        textField.setPlaceholder(text: "닉네임을 입력하세요.")
+        textField.delegate = self
+    
         return textField
     }()
     
@@ -53,12 +78,13 @@ class LoginViewController: UIViewController {
 
 extension LoginViewController {
     private func setAddSubViews() {
-        view.addSubViews([emailTextField,startButton])
+        view.addSubViews([textFieldStackView,startButton])
+        textFieldStackView.addStackSubViews([emailTextField,nameTextField,nicknameTextField])
     }
     
     private func setAutoLayout() {
-        emailTextField.snp.makeConstraints { make in
-            make.centerY.equalToSuperview()
+        textFieldStackView.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(50)
             make.left.right.equalToSuperview().inset(15)
         }
         

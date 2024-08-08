@@ -16,9 +16,6 @@ class HomeViewController: UIViewController {
     
     // MARK: - SubViews
     
-    
-    
-    
     // MARK: - LifeCycle
     
     override func viewDidLoad() {

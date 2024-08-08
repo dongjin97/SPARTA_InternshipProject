@@ -26,29 +26,9 @@ class LoginViewController: UIViewController {
         return stackView
     }()
     
-    private lazy var emailTextField: PaddingTextField = {
-        let textField = PaddingTextField()
-        textField.setPlaceholder(text: "이메일을 입력하세요.")
-        textField.delegate = self
-        
-        return textField
-    }()
-    
-    private lazy var nameTextField: PaddingTextField = {
-        let textField = PaddingTextField()
-        textField.setPlaceholder(text: "이름을 입력하세요.")
-        textField.delegate = self
-        
-        return textField
-    }()
-    
-    private lazy var nicknameTextField: PaddingTextField = {
-        let textField = PaddingTextField()
-        textField.setPlaceholder(text: "닉네임을 입력하세요.")
-        textField.delegate = self
-    
-        return textField
-    }()
+    private lazy var emailTextField = makeTextField(placeholderText: "이메일을 입력하세요.")
+    private lazy var nameTextField = makeTextField(placeholderText: "이름을 입력하세요.")
+    private lazy var nicknameTextField = makeTextField(placeholderText: "닉네임을 입력하세요.")
     
     private lazy var startButton: UIButton = {
         let button = UIButton()
@@ -71,7 +51,6 @@ class LoginViewController: UIViewController {
         setAddSubViews()
         setAutoLayout()
         hideKeyboardWhenTappedAround()
-        CoreDataManager.shared.getSaveCoredataPath()
     }
 }
 
@@ -97,9 +76,10 @@ extension LoginViewController {
     }
 }
 
-// MARK: - Private Method
+// MARK: - Private func
 
 extension LoginViewController {
+    
     private func isOnlyWhitespace(text: String) -> Bool { // 공백 입력 체크
         return text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
     }
@@ -114,27 +94,37 @@ extension LoginViewController {
             return true
         } else {
             if emailCheck {
-                showMessage(message: "이메일 입력칸이 공백입니다.")
-                emailTextField.becomeFirstResponder()
+                focusAndAlert(textField: emailTextField, message: "이메일 입력칸이 공백입니다.")
             } else if nameCheck {
-                showMessage(message: "이름 입력칸이 공백입니다.")
-                nameTextField.becomeFirstResponder()
+                focusAndAlert(textField: nameTextField, message: "이름 입력칸이 공백입니다.")
             } else if nicknameCheck {
-                showMessage(message: "닉네임 입력칸이 공백입니다.")
-                nicknameTextField.becomeFirstResponder()
+                focusAndAlert(textField: nicknameTextField, message: "닉네임 입력칸이 공백입니다.")
             }
         }
         
         return false
     }
     
+    private func makeTextField(placeholderText: String) -> PaddingTextField {
+        let textField = PaddingTextField()
+        textField.setPlaceholder(text: placeholderText)
+        textField.delegate = self
+        
+        return textField
+    }
+    
     private func presentHomeViewController() {
         let viewController = HomeViewController()
+        
         viewController.modalPresentationStyle = .fullScreen
         present(viewController, animated: true)
     }
+    
+    private func focusAndAlert(textField: UITextField, message: String) {
+        showMessage(message: message)
+        textField.becomeFirstResponder()
+    }
 }
-
 
 // MARK: - Action
 
@@ -147,15 +137,14 @@ extension LoginViewController {
         
         if checkTextFieldWhitespace() {
             do {
-                let isUserExit = try CoreDataManager.shared.isUserExist(email: email)
+                let isUserExist = try CoreDataManager.shared.isUserExist(email: email)
                 
-                if isUserExit {
+                if isUserExist {
                     print("가입된 이메일입니다. 로그인을 진행합니다.")
                 } else {
                     print("가입되지 않은 이메일입니다. 회원정보를 저장한후 로그인을 진행합니다.")
                     CoreDataManager.shared.addUser(email: email,name: name, nickname: nickname)
                 }
-                
             } catch {
                 print(error)
             }

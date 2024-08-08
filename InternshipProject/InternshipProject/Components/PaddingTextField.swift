@@ -11,18 +11,14 @@ import UIKit
 
 class PaddingTextField : UITextField {
     var textPadding = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+    
+    // MARK: - init
+    
     convenience init(textPadding: UIEdgeInsets) {
         self.init()
         self.textPadding = textPadding
     }
-    override func textRect(forBounds bounds: CGRect) -> CGRect {
-        let rect = super.textRect(forBounds: bounds)
-        return rect.inset(by: textPadding)
-    }
-    override func editingRect(forBounds bounds: CGRect) -> CGRect {
-        let rect = super.editingRect(forBounds: bounds)
-        return rect.inset(by: textPadding)
-    }
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -36,6 +32,24 @@ class PaddingTextField : UITextField {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
+// MARK: - override func
+
+extension PaddingTextField {
+    override func textRect(forBounds bounds: CGRect) -> CGRect {
+        let rect = super.textRect(forBounds: bounds)
+        
+        return rect.inset(by: textPadding)
+    }
+    
+    override func editingRect(forBounds bounds: CGRect) -> CGRect {
+        let rect = super.editingRect(forBounds: bounds)
+        
+        return rect.inset(by: textPadding)
+    }
+}
+
+// MARK: - func
 
 extension PaddingTextField {
     func setPlaceholder(text: String) {

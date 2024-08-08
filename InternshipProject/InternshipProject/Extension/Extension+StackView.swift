@@ -7,6 +7,8 @@
 
 import UIKit
 
+// MARK: - Extension + UIStackView
+
 extension UIStackView{
     func addStackSubViews(_ views : [UIView]){
         _ = views.map{self.addArrangedSubview($0)}

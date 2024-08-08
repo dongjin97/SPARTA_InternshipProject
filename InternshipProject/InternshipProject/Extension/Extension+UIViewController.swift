@@ -24,9 +24,10 @@ extension UIViewController {
         view.endEditing(true)
     }
     
-    func showMessage(message: String) {
+    func showMessage(message: String) { // alert 출력
         let alertController = UIAlertController(title: "입력 오류", message: message, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "확인", style: .cancel))
+        
         DispatchQueue.main.async {
             self.present(alertController, animated: true)
         }

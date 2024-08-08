@@ -113,10 +113,11 @@ extension LoginViewController {
         return textField
     }
     
-    private func presentHomeViewController() {
+    private func presentHomeViewController(email: String) {
         let viewController = HomeViewController()
         
         viewController.modalPresentationStyle = .fullScreen
+        viewController.email = email
         present(viewController, animated: true)
     }
     
@@ -148,7 +149,7 @@ extension LoginViewController {
             } catch {
                 print(error)
             }
-            presentHomeViewController()
+            presentHomeViewController(email: email)
         }
     }
 }

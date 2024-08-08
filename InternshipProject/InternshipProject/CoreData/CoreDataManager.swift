@@ -75,6 +75,18 @@ extension CoreDataManager {
             print("Documents Directory: \(documentsDirectoryURL)")
         }
     }
+    
+    func getUserInfo(email: String) throws->  User? { // 회원 탈퇴
+        let fetchRequest = fetchRequestUser(email: email)
+        
+        do {
+            let user = try context.fetch(fetchRequest).first
+            
+            return user
+        } catch {
+            throw CoreDataError.fetchFailed(reason: error.localizedDescription)
+        }
+    }
 }
 
 

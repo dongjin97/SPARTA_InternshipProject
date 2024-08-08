@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F832F7662C648D1000C210C8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F832F7652C648D1000C210C8 /* HomeViewController.swift */; };
 		F832F78B2C64947B00C210C8 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F832F78A2C64947B00C210C8 /* Model.swift */; };
+		F84502312C64A34900702AA0 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84502302C64A34900702AA0 /* CoreDataManager.swift */; };
 		F8D1CC622C63226800ED92BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D1CC612C63226800ED92BB /* AppDelegate.swift */; };
 		F8D1CC642C63226800ED92BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D1CC632C63226800ED92BB /* SceneDelegate.swift */; };
 		F8D1CC6E2C63226900ED92BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8D1CC6D2C63226900ED92BB /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		F832F7652C648D1000C210C8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F832F78A2C64947B00C210C8 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		F84502302C64A34900702AA0 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		F8D1CC5E2C63226800ED92BB /* InternshipProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InternshipProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8D1CC612C63226800ED92BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8D1CC632C63226800ED92BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = ../../../../../.Trash/SPARTA_InternshipProject/InternshipProject/InternshipProject/SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			children = (
 				F832F78A2C64947B00C210C8 /* Model.swift */,
 				F8D1CCA42C634AFF00ED92BB /* UserModel.xcdatamodeld */,
+				F84502302C64A34900702AA0 /* CoreDataManager.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 				F832F78B2C64947B00C210C8 /* Model.swift in Sources */,
 				F8D1CCA62C634AFF00ED92BB /* UserModel.xcdatamodeld in Sources */,
 				F8D1CC642C63226800ED92BB /* SceneDelegate.swift in Sources */,
+				F84502312C64A34900702AA0 /* CoreDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

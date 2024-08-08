@@ -19,7 +19,6 @@
 		F8D1CC802C63294200ED92BB /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D1CC7F2C63294200ED92BB /* Extension+UIViewController.swift */; };
 		F8D1CC832C632AEF00ED92BB /* Extension+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D1CC822C632AEF00ED92BB /* Extension+View.swift */; };
 		F8D1CC912C63359300ED92BB /* PaddingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D1CC902C63359300ED92BB /* PaddingTextField.swift */; };
-		F8D1CCA32C634A3B00ED92BB /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D1CCA22C634A3B00ED92BB /* CoreDataManager.swift */; };
 		F8D1CCA62C634AFF00ED92BB /* UserModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F8D1CCA42C634AFF00ED92BB /* UserModel.xcdatamodeld */; };
 		F8D1CCA92C647E3E00ED92BB /* Extension+StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D1CCA82C647E3E00ED92BB /* Extension+StackView.swift */; };
 /* End PBXBuildFile section */
@@ -37,7 +36,6 @@
 		F8D1CC7F2C63294200ED92BB /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
 		F8D1CC822C632AEF00ED92BB /* Extension+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+View.swift"; sourceTree = "<group>"; };
 		F8D1CC902C63359300ED92BB /* PaddingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingTextField.swift; sourceTree = "<group>"; };
-		F8D1CCA22C634A3B00ED92BB /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoreDataManager.swift; path = "../../../../../../.Trash/SPARTA_InternshipProject 오후 3.21.13/InternshipProject/InternshipProject/CoreData/CoreDataManager.swift"; sourceTree = "<group>"; };
 		F8D1CCA52C634AFF00ED92BB /* UserModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserModel.xcdatamodel; sourceTree = "<group>"; };
 		F8D1CCA82C647E3E00ED92BB /* Extension+StackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+StackView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -109,7 +107,6 @@
 			isa = PBXGroup;
 			children = (
 				F832F78A2C64947B00C210C8 /* Model.swift */,
-				F8D1CCA22C634A3B00ED92BB /* CoreDataManager.swift */,
 				F8D1CCA42C634AFF00ED92BB /* UserModel.xcdatamodeld */,
 			);
 			path = CoreData;
@@ -208,7 +205,6 @@
 				F8D1CC802C63294200ED92BB /* Extension+UIViewController.swift in Sources */,
 				F832F7662C648D1000C210C8 /* HomeViewController.swift in Sources */,
 				F8D1CC832C632AEF00ED92BB /* Extension+View.swift in Sources */,
-				F8D1CCA32C634A3B00ED92BB /* CoreDataManager.swift in Sources */,
 				F832F78B2C64947B00C210C8 /* Model.swift in Sources */,
 				F8D1CCA62C634AFF00ED92BB /* UserModel.xcdatamodeld in Sources */,
 				F8D1CC642C63226800ED92BB /* SceneDelegate.swift in Sources */,

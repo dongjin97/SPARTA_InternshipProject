@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+// CoreData error
+
+enum CoreDataError: Error {
+    case fetchFailed(reason: String)
+}
+
+// CoreData Model

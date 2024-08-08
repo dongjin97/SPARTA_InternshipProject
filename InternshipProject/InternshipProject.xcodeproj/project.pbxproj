@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F832F7662C648D1000C210C8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F832F7652C648D1000C210C8 /* HomeViewController.swift */; };
 		F8D1CC622C63226800ED92BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D1CC612C63226800ED92BB /* AppDelegate.swift */; };
 		F8D1CC642C63226800ED92BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D1CC632C63226800ED92BB /* SceneDelegate.swift */; };
 		F8D1CC6E2C63226900ED92BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8D1CC6D2C63226900ED92BB /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F832F7652C648D1000C210C8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F8D1CC5E2C63226800ED92BB /* InternshipProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InternshipProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8D1CC612C63226800ED92BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8D1CC632C63226800ED92BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = ../../../../../.Trash/SPARTA_InternshipProject/InternshipProject/InternshipProject/SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				F8D1CC782C63267500ED92BB /* LoginViewController.swift */,
+				F832F7652C648D1000C210C8 /* HomeViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				F8D1CC912C63359300ED92BB /* PaddingTextField.swift in Sources */,
 				F8D1CC792C63267500ED92BB /* LoginViewController.swift in Sources */,
 				F8D1CC802C63294200ED92BB /* Extension+UIViewController.swift in Sources */,
+				F832F7662C648D1000C210C8 /* HomeViewController.swift in Sources */,
 				F8D1CC832C632AEF00ED92BB /* Extension+View.swift in Sources */,
 				F8D1CCA32C634A3B00ED92BB /* CoreDataManager.swift in Sources */,
 				F8D1CCA62C634AFF00ED92BB /* UserModel.xcdatamodeld in Sources */,

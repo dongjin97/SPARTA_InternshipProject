@@ -10,7 +10,7 @@
 import UIKit
 import SnapKit
 
-// MARK: - LoginViewController
+// MARK: - 초기 화면 LoginViewController
 
 class LoginViewController: UIViewController {
     
@@ -127,6 +127,12 @@ extension LoginViewController {
         
         return false
     }
+    
+    private func presentHomeViewController() {
+        let viewController = HomeViewController()
+        viewController.modalPresentationStyle = .fullScreen
+        present(viewController, animated: true)
+    }
 }
 
 
@@ -138,18 +144,22 @@ extension LoginViewController {
         let name = nameTextField.text ?? ""
         let nickname = nicknameTextField.text ?? ""
         print("typing Email: \(email), name: \(name), nickname: \(nickname)")
+        
         if checkTextFieldWhitespace() {
             do {
                 let isUserExit = try CoreDataManager.shared.isUserExist(email: email)
+                
                 if isUserExit {
                     print("가입된 이메일입니다. 로그인을 진행합니다.")
                 } else {
                     print("가입되지 않은 이메일입니다. 회원정보를 저장한후 로그인을 진행합니다.")
                     CoreDataManager.shared.addUser(email: email,name: name, nickname: nickname)
                 }
+                
             } catch {
                 print(error)
             }
+            presentHomeViewController()
         }
     }
 }

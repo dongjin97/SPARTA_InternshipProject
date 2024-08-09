@@ -94,10 +94,6 @@ extension HomeViewController {
         }
     }
     
-    private func logout() {
-        titleLabel.text = "로그인 해주세요."
-    }
-    
     private func makeButton(title: String,backgroundColor: UIColor) -> UIButton {
         let button = UIButton()
         button.setTitle(title, for: .normal)
@@ -114,6 +110,10 @@ extension HomeViewController {
         removeAccountButton.addTarget(self, action: #selector(tapRemoveAccountButton), for: .touchUpInside)
         logoutButton.addTarget(self, action: #selector(tapLogoutButton), for: .touchUpInside)
     }
+    
+    private func logout() {
+        titleLabel.text = "로그인 해주세요."
+    }
 }
 
 // MARK: - Action
@@ -129,7 +129,6 @@ extension HomeViewController {
         } catch {
             print(error)
         }
-        
         logout()
     }
     

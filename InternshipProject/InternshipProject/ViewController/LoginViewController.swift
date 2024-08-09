@@ -85,7 +85,6 @@ extension LoginViewController {
 // MARK: - Private func
 
 extension LoginViewController {
-    
     private func isOnlyWhitespace(text: String) -> Bool { // 공백 입력 체크
         return text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
     }

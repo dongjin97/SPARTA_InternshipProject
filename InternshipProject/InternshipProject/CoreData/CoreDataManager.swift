@@ -89,8 +89,8 @@ extension CoreDataManager {
     }
 }
 
-
 // MARK: - Private Method
+
 extension CoreDataManager {
     private func saveContext() { // 변경 사항 저장
         if context.hasChanges {

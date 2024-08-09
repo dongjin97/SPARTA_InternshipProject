@@ -91,6 +91,7 @@ extension LoginViewController {
         
         if !emailCheck && !nameCheck && !nicknameCheck {
             print("올바른 입력값이 입력 되었습니다.")
+            
             return true
         } else {
             if emailCheck {
@@ -101,7 +102,6 @@ extension LoginViewController {
                 focusAndAlert(textField: nicknameTextField, message: "닉네임 입력칸이 공백입니다.")
             }
         }
-        
         return false
     }
     

@@ -24,7 +24,6 @@ class HomeViewController: UIViewController {
         let label = UILabel()
         label.font = .systemFont(ofSize: 20, weight: .medium)
         label.textColor = .black
-        label.text = "test"
         label.numberOfLines = 0
         label.textAlignment = .center
         
@@ -98,6 +97,7 @@ extension HomeViewController {
             let userInfo = try CoreDataManager.shared.getUserInfo(email: email ?? "")
             guard let name = userInfo?.name,
                   let nickname = userInfo?.nickname else { return }
+            
             titleLabel.text = "\(name)/\(nickname) 님 환영합니다."
         } catch {
             print(error)
@@ -117,14 +117,17 @@ extension HomeViewController {
     @objc private func tapBackButton() {
         dismiss(animated: true)
     }
+    
     @objc private func tapRemoveAccountButton() {
         do {
             try CoreDataManager.shared.removeUserAccount(email: email ?? "")
         } catch {
             print(error)
         }
-        dismiss(animated: true)
+        
+        titleLabel.text = "로그인 해주세요."
     }
+    
     @objc private func tapLogoutButton() {
         titleLabel.text = "로그인 해주세요."
     }

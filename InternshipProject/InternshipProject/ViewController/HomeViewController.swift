@@ -12,7 +12,7 @@ import SnapKit
 
 // MARK: - 로그인 진행후 화면 HomeViewController
 
-class HomeViewController: UIViewController {
+final class HomeViewController: UIViewController {
     
     // MARK: - Properties
     
@@ -82,16 +82,6 @@ extension HomeViewController {
 // MARK: - Private func
 
 extension HomeViewController {
-    private func makeButton(title: String,backgroundColor: UIColor) -> UIButton {
-        let button = UIButton()
-        button.setTitle(title, for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = backgroundColor
-        button.layer.cornerRadius = 10
-        button.layer.masksToBounds = true
-        
-        return button
-    }
     private func setTitleLabel() {
         do {
             let userInfo = try CoreDataManager.shared.getUserInfo(email: email ?? "")
@@ -102,6 +92,21 @@ extension HomeViewController {
         } catch {
             print(error)
         }
+    }
+    
+    private func logout() {
+        titleLabel.text = "로그인 해주세요."
+    }
+    
+    private func makeButton(title: String,backgroundColor: UIColor) -> UIButton {
+        let button = UIButton()
+        button.setTitle(title, for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = backgroundColor
+        button.layer.cornerRadius = 10
+        button.layer.masksToBounds = true
+        
+        return button
     }
     
     private func setButtonAction() {
@@ -125,11 +130,11 @@ extension HomeViewController {
             print(error)
         }
         
-        titleLabel.text = "로그인 해주세요."
+        logout()
     }
     
     @objc private func tapLogoutButton() {
-        titleLabel.text = "로그인 해주세요."
+        logout()
     }
 }
 

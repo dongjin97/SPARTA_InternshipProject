@@ -9,7 +9,7 @@ import UIKit
 
 // MARK: - PaddingTextField
 
-class PaddingTextField : UITextField {
+final class PaddingTextField : UITextField {
     var textPadding = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
     
     // MARK: - init

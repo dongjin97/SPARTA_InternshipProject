@@ -12,7 +12,7 @@ import SnapKit
 
 // MARK: - 초기 화면 LoginViewController
 
-class LoginViewController: UIViewController {
+final class LoginViewController: UIViewController {
     
     // MARK: - SubViews
     
@@ -119,9 +119,15 @@ extension LoginViewController {
         return textField
     }
     
-    private func isHiddenTextField(hidden: Bool) {
+    private func isHiddenTextField(hidden: Bool) { // 회원시 이름/닉네임 입력 x, 비회원일 경우 이름/닉네임 입력 o
         nameTextField.isHidden = hidden
         nicknameTextField.isHidden = hidden
+    }
+    
+    private func initTextField() { //TextField 입력 초기화
+        emailTextField.text = ""
+        nameTextField.text = ""
+        nicknameTextField.text = ""
     }
     
     private func presentHomeViewController(email: String) {
@@ -136,12 +142,6 @@ extension LoginViewController {
     private func focusAndAlert(textField: UITextField, message: String) { // 입력 오류 알림, 빈칸 포커스 기능
         showMessage(title: "입력 오류", message: message)
         textField.becomeFirstResponder()
-    }
-    
-    private func initTextField() {
-        emailTextField.text = ""
-        nameTextField.text = ""
-        nicknameTextField.text = ""
     }
 }
 

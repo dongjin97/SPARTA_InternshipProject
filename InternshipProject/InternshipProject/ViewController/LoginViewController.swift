@@ -54,7 +54,6 @@ class LoginViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        print(#function)
         setAddSubViews()
         setAutoLayout()
         isHiddenTextField(hidden: true)
@@ -120,11 +119,16 @@ extension LoginViewController {
         return textField
     }
     
+    private func isHiddenTextField(hidden: Bool) {
+        nameTextField.isHidden = hidden
+        nicknameTextField.isHidden = hidden
+    }
+    
     private func presentHomeViewController(email: String) {
         let viewController = HomeViewController()
         
         viewController.modalPresentationStyle = .fullScreen
-        viewController.email = email
+        viewController.email = email 
         initTextField()
         present(viewController, animated: true)
     }
@@ -132,11 +136,6 @@ extension LoginViewController {
     private func focusAndAlert(textField: UITextField, message: String) { // 입력 오류 알림, 빈칸 포커스 기능
         showMessage(title: "입력 오류", message: message)
         textField.becomeFirstResponder()
-    }
-    
-    private func isHiddenTextField(hidden: Bool) {
-        nameTextField.isHidden = hidden
-        nicknameTextField.isHidden = hidden
     }
     
     private func initTextField() {

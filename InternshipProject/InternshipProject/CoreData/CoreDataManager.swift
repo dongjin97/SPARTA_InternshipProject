@@ -44,6 +44,18 @@ extension CoreDataManager {
         print("회원가입이 완료되었습니다.")
     }
     
+    func getUserInfo(email: String) throws->  User? { // 유저 정보 조회
+        let fetchRequest = fetchRequestUser(email: email)
+        
+        do {
+            let user = try context.fetch(fetchRequest).first
+            
+            return user
+        } catch {
+            throw CoreDataError.fetchFailed(reason: error.localizedDescription)
+        }
+    }
+    
     func isUserExist(email: String) throws-> Bool { // 회원가입한 유저인지 조회
         let fetchRequest = fetchRequestUser(email: email)
         
@@ -75,18 +87,6 @@ extension CoreDataManager {
             print("Documents Directory: \(documentsDirectoryURL)")
         }
     }
-    
-    func getUserInfo(email: String) throws->  User? { // 회원 탈퇴
-        let fetchRequest = fetchRequestUser(email: email)
-        
-        do {
-            let user = try context.fetch(fetchRequest).first
-            
-            return user
-        } catch {
-            throw CoreDataError.fetchFailed(reason: error.localizedDescription)
-        }
-    }
 }
 
 // MARK: - Private Method
@@ -104,7 +104,7 @@ extension CoreDataManager {
         }
     }
     
-    private func fetchRequestUser(email: String) -> NSFetchRequest<User> {
+    private func fetchRequestUser(email: String) -> NSFetchRequest<User> { // email을 통한 조회
         let fetchRequest = User.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "email == %@", email)
         

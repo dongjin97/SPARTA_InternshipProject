@@ -48,9 +48,16 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         setBackgroundColor()
+        hideKeyboardWhenTappedAround()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        print(#function)
         setAddSubViews()
         setAutoLayout()
-        hideKeyboardWhenTappedAround()
+        isHiddenTextField(hidden: true)
     }
 }
 
@@ -118,12 +125,24 @@ extension LoginViewController {
         
         viewController.modalPresentationStyle = .fullScreen
         viewController.email = email
+        initTextField()
         present(viewController, animated: true)
     }
     
-    private func focusAndAlert(textField: UITextField, message: String) {
-        showMessage(message: message)
+    private func focusAndAlert(textField: UITextField, message: String) { // 입력 오류 알림, 빈칸 포커스 기능
+        showMessage(title: "입력 오류", message: message)
         textField.becomeFirstResponder()
+    }
+    
+    private func isHiddenTextField(hidden: Bool) {
+        nameTextField.isHidden = hidden
+        nicknameTextField.isHidden = hidden
+    }
+    
+    private func initTextField() {
+        emailTextField.text = ""
+        nameTextField.text = ""
+        nicknameTextField.text = ""
     }
 }
 
@@ -135,21 +154,24 @@ extension LoginViewController {
         let name = nameTextField.text ?? ""
         let nickname = nicknameTextField.text ?? ""
         print("typing Email: \(email), name: \(name), nickname: \(nickname)")
-        
-        if checkTextFieldWhitespace() {
-            do {
-                let isUserExist = try CoreDataManager.shared.isUserExist(email: email)
+        do {
+            let isUserExist = try CoreDataManager.shared.isUserExist(email: email)
+            
+            if isUserExist {
+                print("가입된 이메일입니다. 로그인을 진행합니다.")
+                presentHomeViewController(email: email)
+            } else {
+                print("가입되지 않은 이메일입니다. 회원정보를 저장한후 로그인을 진행합니다.")
+                isHiddenTextField(hidden: false)
+                showMessage(title: "비회원", message: "이름과 닉네임을 입력해주세요.")
                 
-                if isUserExist {
-                    print("가입된 이메일입니다. 로그인을 진행합니다.")
-                } else {
-                    print("가입되지 않은 이메일입니다. 회원정보를 저장한후 로그인을 진행합니다.")
+                if checkTextFieldWhitespace() {
                     CoreDataManager.shared.addUser(email: email,name: name, nickname: nickname)
+                    presentHomeViewController(email: email)
                 }
-            } catch {
-                print(error)
             }
-            presentHomeViewController(email: email)
+        } catch {
+            print(error)
         }
     }
 }

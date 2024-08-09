@@ -12,5 +12,3 @@ import Foundation
 enum CoreDataError: Error {
     case fetchFailed(reason: String)
 }
-
-// CoreData Model
